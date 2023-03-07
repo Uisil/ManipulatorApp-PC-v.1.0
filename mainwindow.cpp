@@ -7,16 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(&manager,&QNetworkAccessManager::authenticationRequired,this,&MainWindow::authenticationRequired);
-    connect(&manager,&QNetworkAccessManager::encrypted,this,&MainWindow::encrypted);
-    connect(&manager,&QNetworkAccessManager::preSharedKeyAuthenticationRequired,this,&MainWindow::preSharedKeyAuthenticationRequired);
-    connect(&manager,&QNetworkAccessManager::proxyAuthenticationRequired,this,&MainWindow::proxyAuthenticationRequired);
-    connect(&manager,&QNetworkAccessManager::sslErrors,this,&MainWindow::sslErrors);
+    webClient = new WebClient();
 
-    QByteArray data;
-
-    data.append("asdasda");
-    this->get("http://192.168.0.46/L");
 
 }
 
@@ -25,58 +17,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::get(QString location)
+
+
+void MainWindow::on_sliderZ1_valueChanged(int value)
 {
-    qInfo() << "Getting from server...";
-    QNetworkReply* reply = manager.get(QNetworkRequest(location));
-    connect(reply,&QNetworkReply::readyRead,this,&MainWindow::readyRead);
+    valueZ1 = value;
 }
 
-void MainWindow::post(QString location, QByteArray data)
-{
-    qInfo() << "Posting from server...";
-    QNetworkRequest request = QNetworkRequest(QUrl(location));
-    request.setHeader(QNetworkRequest::ContentTypeHeader,"text/plain");
 
-    QNetworkReply* reply = manager.post(request,data);
-    connect(reply,&QNetworkReply::readyRead,this,&MainWindow::readyRead);
+void MainWindow::on_sliderZ2_valueChanged(int value)
+{
+    valueZ2 = value;
 }
 
-void MainWindow::readyRead()
-{
- qInfo()<< "ReadReady";
 
- QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
- if(reply) reply->readAll();
-}
-
-void MainWindow::authenticationRequired(QNetworkReply *reply, QAuthenticator *authenticator)
+void MainWindow::on_sliderZ3_valueChanged(int value)
 {
-    qInfo()<< "autenticationRequired";
-}
-
-void MainWindow::encrypted(QNetworkReply *reply)
-{
-    qInfo()<< "encrypted";
-}
-
-void MainWindow::finished(QNetworkReply *reply)
-{
-    qInfo()<< "finished";
-}
-
-void MainWindow::preSharedKeyAuthenticationRequired(QNetworkReply *reply, QSslPreSharedKeyAuthenticator *authenticator)
-{
-    qInfo()<< "predSharedKeyAuthenticationRequired";
-}
-
-void MainWindow::proxyAuthenticationRequired(const QNetworkProxy &proxy, QAuthenticator *authenticator)
-{
-    qInfo()<< "proxyAutehnticationRequired";
-}
-
-void MainWindow::sslErrors(QNetworkReply *reply, const QList<QSslError> &errors)
-{
-    qInfo()<< "sslErrors";
+    valueZ3 = value;
 }
 

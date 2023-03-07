@@ -4,12 +4,7 @@
 #include <QObject>
 #include <QMainWindow>
 #include <QDebug>
-#include <QIODevice>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
-#include <QAuthenticator>
-#include <QNetworkProxy>
+#include "webclient.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,19 +21,18 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    QNetworkAccessManager manager;
+    int valueZ1, valueZ2, valueZ3;
+    bool gripperState;
+    WebClient *webClient;
+
 
 public slots:
-    void get(QString location);
-    void post(QString location, QByteArray data);
+
 
 private slots:
-    void readyRead();
-    void authenticationRequired(QNetworkReply *reply, QAuthenticator *authenticator);
-    void encrypted(QNetworkReply *reply);
-    void finished(QNetworkReply *reply);
-    void preSharedKeyAuthenticationRequired(QNetworkReply *reply, QSslPreSharedKeyAuthenticator *authenticator);
-    void proxyAuthenticationRequired(const QNetworkProxy &proxy, QAuthenticator *authenticator);
-    void sslErrors(QNetworkReply *reply, const QList<QSslError> &errors);
+
+    void on_sliderZ1_valueChanged(int value);
+    void on_sliderZ2_valueChanged(int value);
+    void on_sliderZ3_valueChanged(int value);
 };
 #endif // MAINWINDOW_H

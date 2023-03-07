@@ -16,13 +16,13 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="controlGroupBox">
       <property name="title">
        <string>Sterowanie</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="6">
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="gripperOff">
          <property name="text">
           <string>Zamknij chwytak</string>
          </property>
@@ -36,21 +36,21 @@
         </widget>
        </item>
        <item row="0" column="0" rowspan="3">
-        <widget class="QSlider" name="verticalSlider">
+        <widget class="QSlider" name="sliderZ1">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
         </widget>
        </item>
        <item row="0" column="4" rowspan="3">
-        <widget class="QSlider" name="verticalSlider_3">
+        <widget class="QSlider" name="sliderZ3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
         </widget>
        </item>
        <item row="0" column="6">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="gripperOn">
          <property name="text">
           <string>Otwórz chwytak</string>
          </property>
@@ -64,7 +64,7 @@
         </widget>
        </item>
        <item row="0" column="2" rowspan="3">
-        <widget class="QSlider" name="verticalSlider_2">
+        <widget class="QSlider" name="sliderZ2">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -107,20 +107,13 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="terminalGroupBox">
       <property name="title">
        <string>Terminal</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="textEdit"/>
+        <widget class="QTextEdit" name="terminal"/>
        </item>
       </layout>
      </widget>
