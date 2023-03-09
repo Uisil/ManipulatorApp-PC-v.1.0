@@ -8,10 +8,10 @@ WebClient::WebClient()
     connect(&manager,&QNetworkAccessManager::proxyAuthenticationRequired,this,&WebClient::proxyAuthenticationRequired);
     connect(&manager,&QNetworkAccessManager::sslErrors,this,&WebClient::sslErrors);
 
-    QByteArray data;
-    data ="aasdasd\n"; //ZAWSZE NA KOŃCU '/n' ŻEBY SERVER WIEDZIAŁ ŻE TO KONIEC RAMKI DANYCH
+    //QByteArray data;
+    //data ="aasdasd\n"; //ZAWSZE NA KOŃCU '/n' ŻEBY SERVER WIEDZIAŁ ŻE TO KONIEC RAMKI DANYCH
 
-    this->post("http://192.168.0.46", data);
+    //this->post("http://192.168.0.46", data);
 }
 
 WebClient::~WebClient()

@@ -24,15 +24,21 @@ private:
     int valueZ1, valueZ2, valueZ3;
     bool gripperState;
     WebClient *webClient;
+    QString location;
+    QByteArray dataZ1;
+    QByteArray dataZ2;
+    QByteArray dataZ3;
 
 
 public slots:
 
 
 private slots:
-
-    void on_sliderZ1_valueChanged(int value);
-    void on_sliderZ2_valueChanged(int value);
-    void on_sliderZ3_valueChanged(int value);
+    void on_sendButton_clicked();
+    void on_sliderZ1_sliderMoved(int position);
+    void on_sliderZ2_sliderMoved(int position);
+    void on_sliderZ3_sliderMoved(int position);
+    void on_gripperOn_clicked();
+    void on_gripperOff_clicked();
 };
 #endif // MAINWINDOW_H

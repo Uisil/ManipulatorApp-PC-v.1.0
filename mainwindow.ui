@@ -21,13 +21,6 @@
        <string>Sterowanie</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="6">
-        <widget class="QPushButton" name="gripperOff">
-         <property name="text">
-          <string>Zamknij chwytak</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="4">
         <widget class="QLabel" name="label_3">
          <property name="text">
@@ -102,6 +95,20 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="1" column="6">
+        <widget class="QPushButton" name="gripperOff">
+         <property name="text">
+          <string>Zamknij chwytak</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="6">
+        <widget class="QPushButton" name="sendButton">
+         <property name="text">
+          <string>Wyślij</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
